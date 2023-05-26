@@ -1,0 +1,38 @@
+body{
+    background-color: rgb(22,44,27);
+    background-image: url('/images/pet\ background.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+header {
+    padding: 2px;
+    text-align: center;
+    background: #c39411;
+    color: white;
+    font-size: 10px;
+}
+
+h1{
+color: rgb(5, 10, 10);
+}
+
+h2{
+    color: #c39411;
+}
+
+p{
+    color: #c39411;
+}
+
+.button {
+    transition-duration: 0.4s;
+    border-radius: 2px;
+    font-size: 20px;
+    background-color: #008CBA; color: #c39411;
+}
+.button:hover {
+    background-color: #101c6a; /* Green */
+    color: white;
+}
