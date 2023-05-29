@@ -1,38 +1,82 @@
+/*global*/
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Londrina+Shadow&family=Montserrat:wght@300&family=Poppins:ital,wght@1,100&family=Roboto+Condensed:ital,wght@1,300&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+
 body{
     background-color: rgb(22,44,27);
     background-image: url('/images/pet\ background.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
+    font-family: 'Lato',sans-serif;
 
 }
 
+a{
+    text-decoration: none;
+    font-size: 40px;
+}
+
+/*header*/
+
 header {
+    height: 20vh;
     padding: 2px;
+    display: flex;
+    justify-content: space-around;
     text-align: center;
     background: #c39411;
     color: white;
     font-size: 10px;
 }
 
+header h1{
+    color: black;
+    font-size: 50px;
+
+}
+
+nav.menu a{
+    color: white;
+    margin-right: 1rem;
+    font-weight: bold;
+}
+
+
 h1{
 color: rgb(5, 10, 10);
+text-align: center;
 }
 
 h2{
     color: #c39411;
+    text-align: center;
 }
 
 p{
     color: #c39411;
+    text-align: center;
 }
 
 .button {
     transition-duration: 0.4s;
     border-radius: 2px;
     font-size: 20px;
-    background-color: #008CBA; color: #c39411;
+    background-color: #c39411; color: black;
 }
 .button:hover {
     background-color: #101c6a; /* Green */
     color: white;
+}
+
+/*form*/
+
+.form{
+    color: white;
+    width: 100%;
+    text-align: center;
 }

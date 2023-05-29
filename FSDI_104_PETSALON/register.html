@@ -14,17 +14,46 @@
         <a href="index.html"> Home </a>
         <a href="/contact.html"> Contact </a>
         <a href="/services.html"> Services </a>
-        <a href="/register.html"> Services </a>
+        <a href="/register.html"> Register </a>
     </header>
 
     <main>
-        <h2> Register </h2>
         <div id="info">
             
         </div>
 
-        <button id="btn" class="button" onclick="petSalon1()">Pick a Pet</button>
+        <form action="#" id="myForm" class="form">
+        
+            <h2> Register a new pet</h2>
+            
+            Name: <input type="text" id="name" placeholder="Name">
+            <br>
+            Age: <input type="number" id="age" min="0" max="30" placeholder="Age" size="50">
+            <br>
+            Gender: <input type="text" id="gender" placeholder="Gender">
+            <br>
+            Breed: <input type="text" id="breed" placeholder="Breed">
+            <br>
+            Service:<select title="service" name="Service" id="service">
+                <option value="grooming">Grooming 🛁</option>
+                <option value="nails">Nails Trimming 💅</option>
+                <option value="vaccines">Vaccines 💉</option>
+                </select>
+            <br>
+            Type:<select title="type" name="Type" id="type">
+                <option value="standard"> Standard 🎟️</option>
+                <option value="premium">Premium 🎫</option>
+                <option value="platinum">Platinum 💳 </option>
+                </select>
+                <br>
+            <button type="button" id="btn" class="button" onclick="register()">Register</button>
+            <button type="button" id="remove" class="button" onclick="clear()"> Clear Form</button>
+        </form>
 
+
+        <div id="allPets" class="allPets">
+            
+        </div>
     </main>
 
     <footer>
