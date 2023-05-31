@@ -14,7 +14,7 @@ console.log(petSalon)
 
 // create the Pet constructor (name, age, gender,breed, service)
 
-function Pets (name,age,gender,breed,service,type){
+function Pet (name,age,gender,breed,service,type){
     this.name = name;
     this.age = age;
     this.gender = gender;
@@ -24,19 +24,6 @@ function Pets (name,age,gender,breed,service,type){
 }
 
 
-
-
-function displayInformation(){
-    document.getElementById("allPets").innerHTML =`<div class= "allPets" > <p> Welcome to ${petSalon.name} </p>
-<p> Located in ${petSalon.address.city} and ${petSalon.address.country} Zip Code ${petSalon.address.zip}</p>
-<br>
-<p> Name: ${petSalon.pets[0].name}</p>
-<p> Name: ${petSalon.pets[1].name}</p>
-<p> Name: ${petSalon.pets[2].name}</p>
-</div>
-`;
-
-}
 //get the inputs from the HTML
 
 let inputName = document.getElementById('name');
@@ -46,6 +33,19 @@ let inputBreed = document.getElementById('breed');
 let inputService = document.getElementById('service');
 let inputType = document.getElementById('type');
 
+function isValid(aPet){
+    // we need to assume that the valid pet is true
+    let valid = true;
+
+    if (aPet.name == "" )
+    {
+        // if you get here it means the pet is not valid 
+        valid = false;
+        inputName.classList.add("error");
+    }
+    return valid;
+}
+
 function clear() {
 
 inputName.remove();
@@ -54,9 +54,13 @@ inputName.remove();
 
 function register(){
 // create the obj
-let newPet = new Pets (inputName.value, inputAge.value,inputGender.value, inputBreed.value, inputService.value, inputType.value);
+console.log("hello IM the register");
+let newPet = new Pet (inputName.value, inputAge.value,inputGender.value, inputBreed.value, inputService.value, inputType.value);
+if (isValid(newPet)){
+    petSalon.pets.push(newPet);
+    displayPetCard();
+}
 //display the object
-petSalon.pets.push(newPet);
 
 console.log(newPet);
 }
@@ -66,11 +70,10 @@ function init(){
 //hook events
 //execute functions
 //create two pets using the Pet constructor
-
-let p1 = new Pets ("rowdy", 1, "male", "doverman", "grooming", "platinum");
-let p2 = new Pets ("rover", 4, "female", "pitbull", "grooming", "platinum");
+let p1 = new Pet ("rowdy", 1, "male", "doverman", "grooming", "platinum");
+let p2 = new Pet ("rover", 4, "female", "pitbull", "grooming", "platinum");
 petSalon.pets.push(p1,p2);
-
+displayPetCard();
 console.log(p1,p2);
 
 }
