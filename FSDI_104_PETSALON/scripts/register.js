@@ -1,5 +1,6 @@
 //object literal
 
+
 let petSalon = {
     name: "The Fashion Pet",
     address: { 
@@ -9,6 +10,8 @@ let petSalon = {
     phone:"301-867-5309",
     pets: [],
 }
+
+let counter =0;
 
 console.log(petSalon)
 
@@ -21,6 +24,7 @@ function Pet (name,age,gender,breed,service,type){
     this.breed = breed;
     this.service = service;
     this.type = type;
+    this.id = counter++;
 }
 
 
@@ -43,12 +47,53 @@ function isValid(aPet){
         valid = false;
         inputName.classList.add("error");
     }
+    if (aPet.age ==""){
+        valid=false;
+        inputAge.classList.add("error");
+    }
+    if (aPet.gender ==""){
+        valid=false;
+        inputGender.classList.add("error");
+    }
+    if (aPet.breed ==""){
+        valid=false;
+        inputBreed.classList.add("error");
+    }
+    if (aPet.service ==""){
+        valid=false;
+        inputService.classList.add("error");
+    }
+    if (aPet.type ==""){
+        valid=false;
+        inputType.classList.add("error");
+    }
+    console.log(clearInputs)
     return valid;
 }
 
-function clear() {
+function clearInputs() {
+inputName.value="";
+inputAge.value="";
+inputBreed.value="";
+inputGender.value="";
+inputService.value="";
+inputType.value="";
 
-inputName.remove();
+}
+
+function deletePet(id){
+    console.log("Deleting pet" + id);
+    let deleteIndex;
+
+    document.getElementById(id).remove();//removes from html
+
+    for (let i=0; i < petSalon.pets.length; i++){
+        let pet = petSalon.pets[i];
+        if(pet.id == id){
+            deleteIndex=i;
+        }
+    }
+    petSalon.pets.splice(deleteIndex,1);
 
 }
 
@@ -58,12 +103,15 @@ console.log("hello IM the register");
 let newPet = new Pet (inputName.value, inputAge.value,inputGender.value, inputBreed.value, inputService.value, inputType.value);
 if (isValid(newPet)){
     petSalon.pets.push(newPet);
-    displayPetCard();
+    // displayPetCard();
+    displayPetTable();
+    clearInputs();
 }
 //display the object
 
 console.log(newPet);
 }
+
 
 
 function init(){
@@ -72,8 +120,10 @@ function init(){
 //create two pets using the Pet constructor
 let p1 = new Pet ("rowdy", 1, "male", "doverman", "grooming", "platinum");
 let p2 = new Pet ("rover", 4, "female", "pitbull", "grooming", "platinum");
-petSalon.pets.push(p1,p2);
-displayPetCard();
+//petSalon.pets.push(p1,p2);
+// displayPetCard();
+displayPetTable();
+
 console.log(p1,p2);
 
 }

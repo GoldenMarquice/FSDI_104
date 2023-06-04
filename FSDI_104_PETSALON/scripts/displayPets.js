@@ -29,6 +29,29 @@ function displayPetCard() {
     DIV.innerHTML = card;
 }
 
+function displayPetTable(){
+    let tr="";
+    const TABLE = document.getElementById("petTable");
+
+    for (let i = 0; i < petSalon.pets.length; i++) {
+        let pet = petSalon.pets[i];
+        tr += ` 
+        <tr id="${pet.id}" class="table-row">
+        <td>${pet.name}</td>
+        <td>${pet.age}</td>
+        <td>${pet.gender}</td>
+        <td>${pet.breed}</td>
+        <td>${pet.service}</td>
+        <td>${pet.type}</td>
+        <td><button onclick="deletePet(${pet.id});" id="petTable"> Delete </button> </td>
+    </tr>
+    `;
+    }
+    TABLE.innerHTML=tr;
+
+
+}
+
 function displayInformation() {
     document.getElementById("pets").innerHTML = `<div class= "allPets" > <p> Welcome to ${petSalon.name} </p>
     <p> Located in ${petSalon.address.city} and ${petSalon.address.country} Zip Code ${petSalon.address.zip}</p>

@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles/mystyles.css">
-    <title>Document</title>
+    <title>Register</title>
 </head>
 <body>
     <header>
-        <h1>Fashion Pet</h1>
+        <h1>Big Dawg's</h1>
         
         <a href="index.html"> Home </a>
         <a href="/contact.html"> Contact </a>
@@ -47,12 +47,30 @@
                 </select>
                 <br>
             <button type="button" id="btn" class="button" onclick="register()">Register</button>
-            <button type="button" id="remove" class="button" onclick="clear()"> Clear Form</button>
+            <button type="button" id="remove" class="button" onclick="clearInputs()"> Clear Form</button>
         </form>
         <br>
-        <div id="pets" class="pets">
-        </div>
+        <!-- <div id="pets" class="pets">
+        </div> -->
         <br>
+        <br>
+        <div class="register-table-title">Registered Pets</div>
+        <table class="tableRegister">
+            <thead class="register-thead"> 
+                
+            <tr class="table-row">
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Breed</th>
+                <th>Service</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody id="petTable">
+            
+        </tbody>
+        </table>
     </main>
 
     <footer>

@@ -1,30 +1,34 @@
 /*global*/
 @import url('https://fonts.googleapis.com/css2?family=Lato&family=Londrina+Shadow&family=Montserrat:wght@300&family=Poppins:ital,wght@1,100&family=Roboto+Condensed:ital,wght@1,300&display=swap');
 
-*{
+* {
     padding: 0;
     margin: 0;
 }
 
 
-body{
-    background-color: rgb(22,44,27);
-    background-image: url('/images/pet\ background.jpeg');
+body {
+    background-color: rgb(22, 44, 27);
+    background-image: url('/images/desktop-wallpaper-big-dog-k9-dog.jpg');
     background-size: cover;
+    background-attachment: fixed;
     background-repeat: no-repeat;
-    font-family: 'Lato',sans-serif;
+    font-family: 'Lato', sans-serif;
+    overflow-y: scroll;
+    background-position: center;
 
 }
 
-a{
+a {
     text-decoration: none;
     font-size: 40px;
+    color: black;
 }
 
 /*header*/
 
 header {
-    height: 20vh;
+    height: 12vh;
     padding: 2px;
     display: flex;
     justify-content: space-around;
@@ -34,57 +38,92 @@ header {
     font-size: 10px;
 }
 
-header h1{
+header h1 {
     color: black;
     font-size: 50px;
+    text-align: center;
+
 
 }
 
-nav.menu a{
+nav.menu a {
     color: white;
     margin-right: 1rem;
     font-weight: bold;
 }
 
 
-h1{
-color: rgb(5, 10, 10);
-text-align: center;
+h1 {
+    color: rgb(5, 10, 10);
+    text-align: center;
+
 }
 
-.indexh2{
+table {
+    border-collapse: collapse;
+    width: 400px;
     color: #c39411;
     text-align: center;
 }
 
-.indexp{
+th {
+    background-color: #c39411;
+    color: black;
+    padding: 10px;
+}
+
+td {
+    background-color: black;
+    color: #c39411;
+    padding: 10px;
+}
+
+.index-h1 {
+    text-align: center;
+}
+
+.indexh2 {
+    color: white;
+    text-align: center;
+}
+
+.indexp {
     color: #c39411;
     text-align: center;
+    opacity: 0;
 }
 
 .button {
     transition-duration: 0.4s;
     border-radius: 2px;
     font-size: 20px;
-    background-color: #c39411; color: black;
+    background-color: #c39411;
+    color: black;
 }
+
 .button:hover {
-    background-color: #101c6a; /* Green */
+    background-color: #101c6a;
+    /* Green */
     color: white;
 }
 
 /*form*/
 
-.form{
+.form {
     color: white;
     width: 100%;
     text-align: center;
 }
+
+.error {
+    border: 1px solid red;
+}
+
 /*petcard*/
 
-#pets{
+#pets {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     column-gap: 1rep;
     text-align: center;
     justify-content: center;
@@ -96,9 +135,260 @@ text-align: center;
     background-color: aqua;
 }
 
-.pet{
+.pet {
     border: 1px solid black;
-    background-color: aliceblue ;
+    background-color: aliceblue;
     border-radius: 5px;
     padding: 1rem;
+}
+
+.tableRegister {
+    color: aliceblue;
+}
+
+.table-row {
+    background-color: #c39411;
+    border: black 1px;
+}
+
+.regStrong {
+    color: #c39411;
+    text-align: center;
+
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card {
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+}
+
+.card-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card-description {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.card-footer {
+    font-size: 12px;
+    color: #999;
+    text-align: right;
+}
+
+.card-address {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.card-map {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 10px;
+}
+
+.contact-card {
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 60px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    justify-content: center;
+    height: 200px;
+    margin-bottom: 10px;
+}
+
+
+.contact-card-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.contact-card-description {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.contact-card-footer {
+    font-size: 12px;
+    color: #999;
+    text-align: right;
+}
+
+.contact-card-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 50%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    opacity: 0.5;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active,
+.accordion:hover {
+    background-color: #c39411;
+    opacity: 0.5;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+    opacity: 0.5;
+    width: 50%;
+}
+
+.contact-p {
+    color: white;
+    text-align: center;
+    font-size: 40px;
+
+}
+
+.register-thead {
+    color: white;
+    text-align: center;
+    font-size: 40px;
+}
+
+.register-table-title {
+    color: white;
+    text-align: center;
+    font-size: 40px;
+}
+
+* {
+    box-sizing: border-box
+}
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+    width: 50%;
+}
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+.text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+    background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
 }
